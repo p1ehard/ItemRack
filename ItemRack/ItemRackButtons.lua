@@ -676,7 +676,7 @@ function ItemRack.KeyBindingsChanged()
 	for i in pairs(ItemRackUser.Buttons) do
 		if ItemRackSettings.ShowHotKeys=="ON" then
 			key = GetBindingKey("CLICK ItemRackButton"..i..":LeftButton")
-			_G["ItemRackButton"..i.."HotKey"]:SetText(GetBindingText(key or "",nil,1))
+			_G["ItemRackButton"..i.."HotKey"]:SetText(GetBindingText(key or "",nil,1):gsub("SHIFT","s"):gsub("CTRL","c"):gsub("ALT","a"))
 		else
 			_G["ItemRackButton"..i.."HotKey"]:SetText("")
 		end
